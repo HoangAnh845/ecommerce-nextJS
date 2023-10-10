@@ -1,4 +1,4 @@
-#### App is live and running at 
+# ecommerce-nextJS
 
 #### multi User Login System
 - SignIn / SignUp ✔
@@ -71,4 +71,3 @@ Install my-project with npm
   npm run build (for Production)
   npm run preview (To View Production Server )
 ```
-# ecommerce-nextJS

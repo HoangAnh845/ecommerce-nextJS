@@ -16,7 +16,7 @@ const bgBanner = {
   borderRadius: "20px",
 };
 
-export default function Hero({ setRatio }: IProps) {
+export default function Hero() { // { setRatio }: IProps
   return (
     <div className="relative w-full h-[400px] sm:h-[345px]">
       <div style={bgBanner} className="p-5 pb-0">

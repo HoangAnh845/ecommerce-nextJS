@@ -10,11 +10,7 @@ const bookmark = Joi.object({
     productID: Joi.string().required()
 })
 
-
-
-
-
-export const dynamic  = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
     try {

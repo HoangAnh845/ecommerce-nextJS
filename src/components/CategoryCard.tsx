@@ -22,9 +22,10 @@ export default function CategoryCard({
   return (
     <div
       onClick={() => router.push(`/category/category-product/${_id}`)}
-      className="text-black cursor-pointer h-44 m-3 rounded-md bg-gray-50 shadow-xl relative"
+      className="text-black cursor-pointer w-[18%] m-3 rounded-md bg-gray-50 shadow-xl relative"
     >
-      <div className="w-full h-32 p-5 bg-gray-200 rounded-t-md overflow-hidden">
+      <div className="w-full bg-gray-200 rounded-t-md overflow-hidden">
+        {/* /category/headphone.png     categoryImage */}
         <img src={categoryImage} className="w-3/5 m-auto" alt="image" />
       </div>
       <div className="p-3 text-center">

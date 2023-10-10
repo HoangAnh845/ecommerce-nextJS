@@ -9,11 +9,6 @@ export const dynamic = 'force-dynamic'
 export async function GET(req: Request) {
   await connectDB();
   try {
-
-    
-    
-
-    
       const getData = await Category.find({});
       if (getData) {
         return NextResponse.json({success  :true , data : getData});

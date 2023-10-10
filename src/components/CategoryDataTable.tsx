@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/Store/store";
 import { useRouter } from "next/navigation";
 import { setNavActive } from "@/utils/AdminNavSlice";
+import { setCategory } from "@/utils/CategorySlice";
 
 type CategoryData = {
   _id: string;
@@ -65,7 +66,11 @@ export default function CategoryDataTable() {
       cell: (row: CategoryData) => (
         <div className="flex items-center justify-start px-2 h-20">
           <button
-            onClick={() => router.push(`/category/update-category/${row?._id}`)}
+            onClick={() => {
+              // router.push(`/category/update-category/${row?._id}`)
+              dispatch(setCategory(row?._id));
+              dispatch(setNavActive("activeCategoriesUpdate"));
+            }}
             className=" w-20 py-2 mx-2 text-xs text-green-600 hover:text-white my-2 hover:bg-green-600 border border-green-600 rounded transition-all duration-700"
           >
             Update

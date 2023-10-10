@@ -35,6 +35,7 @@ type User = {
 
 
 export default function ProductCard({ productName, productFeatured, productImage, productCategory, productPrice, _id, productSlug }: ProductData) {
+    
     const router = useRouter();
 
     const user = useSelector((state: RootState) => state.User.userData) as User | null
@@ -62,9 +63,9 @@ export default function ProductCard({ productName, productFeatured, productImage
 
 
     return (
-        <div  className=" cursor-pointer card-compact bg-white shadow-xl relative">
-            <div onClick={() => router.push(`/product/product-detail/${_id}`)} className='w-full rounded relative h-60'>
-                <Image src={productImage || '/images98.jpg'} alt='no Image' className='rounded' fill />
+        <div  className=" cursor-pointer card-compact bg-white shadow-xl relative border h-[fit-content] rounded-lg">
+            <div onClick={() => router.push(`/product/product-detail/${_id}`)} className='w-full rounded relative p-5'>
+                <img src={productImage || '/images98.jpg'} alt='no Image' className='rounded' />
             </div>
 
             <div className="card-body">
@@ -72,8 +73,8 @@ export default function ProductCard({ productName, productFeatured, productImage
                 <p className='font-semibold text-orange-500' onClick={() => router.push(`/product/product-detail/${_id}`)}>{`$${productPrice}.000`}</p>
                 <div className="card-actions justify-end z-20">
                     <button onClick={AddToCart} className=""><BsCartPlus className='text-4xl border p-2 rounded-full hover:bg-orange-500 hover:text-white' /></button>
-                    <button onClick={AddToBookmark} className="btn btn-circle btn-ghost text-white hover:text-red-500 absolute top-0 right-0 "><MdFavorite className='text-2xl font-semibold' /></button>
-                    <button onClick={AddToBookmark} className="btn btn-circle btn-ghost text-white absolute top-[10%] right-0 "><IoMdEye className='text-2xl font-semibold' /></button>
+                    <button onClick={AddToBookmark} className="btn btn-circle btn-ghost text-black hover:text-red-500 absolute top-0 right-0 "><MdFavorite className='text-2xl font-semibold' /></button>
+                    {/* <button onClick={AddToBookmark} className="btn btn-circle btn-ghost text-black absolute top-[10%] right-0 "><IoMdEye className='text-2xl font-semibold' /></button> */}
                 </div>
             </div>
         </div>

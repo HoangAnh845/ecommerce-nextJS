@@ -14,6 +14,6 @@ const UserSchema = new mongoose.Schema({
 
 // `Model User` đã tồn tại trong MongoDB thì sẽ sử dụng 
 // Không có sẽ tạo ra `Model User`
-const User = mongoose.models.User  || mongoose.model('User', UserSchema);
+const User = mongoose.models.Users  || mongoose.model('User', UserSchema);
 
 export default User;

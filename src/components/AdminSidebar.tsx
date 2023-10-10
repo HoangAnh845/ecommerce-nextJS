@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import {  AiOutlineBook, AiOutlineDashboard, AiOutlineShoppingCart } from "react-icons/ai";
-import { BiBarChartSquare, BiCategory, BiCookie} from "react-icons/bi";
+import {
+  AiOutlineBook,
+  AiOutlineDashboard,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
+import { BiBarChartSquare, BiCategory, BiCookie } from "react-icons/bi";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { setNavActive } from "@/utils/AdminNavSlice";
 import { useDispatch } from "react-redux";
@@ -26,18 +30,12 @@ export default function AdminSidebar() {
               <AiOutlineDashboard className="mx-2 text-xl" /> Dashboard
             </button>
           </li>
-          <li
-            onClick={() => {}}
-            className="py-3 px-1 mb-3"
-          >
+          <li onClick={() => {}} className="py-3 px-1 mb-3">
             <button className="flex items-center justify-center">
               <TbUsers className="mx-2 text-xl" /> Users
             </button>
           </li>
-          <li
-            onClick={() => {}}
-            className="py-3 px-1 mb-3"
-          >
+          <li onClick={() => {}} className="py-3 px-1 mb-3">
             <button className="flex items-center justify-center">
               <AiOutlineBook className="mx-2 text-xl" /> Blog
             </button>
@@ -61,33 +59,24 @@ export default function AdminSidebar() {
             </button>
           </li>
           <li
-            onClick={() => {}}
+            onClick={() => dispatch(setNavActive("activePendingOrder"))}
             className="py-3 px-1 mb-3"
           >
             <button className="flex items-center justify-center">
               <AiOutlineShoppingCart className="mx-2 text-xl" /> Orders
             </button>
           </li>
-          <li
-            onClick={() => {}}
-            className="py-3 px-1 mb-3"
-          >
+          <li onClick={() => dispatch(setNavActive("activeDeliveredOrder"))} className="py-3 px-1 mb-3">
             <button className="flex items-center justify-center">
               <MdOutlineLocalShipping className="mx-2 text-xl" /> Shipping
             </button>
           </li>
-          <li
-            onClick={() => {}}
-            className="py-3 px-1 mb-3"
-          >
+          <li onClick={() => {}} className="py-3 px-1 mb-3">
             <button className="flex items-center justify-center">
               <BiBarChartSquare className="mx-2 text-xl" /> Statistics
             </button>
           </li>
-          <li
-            onClick={() => {}}
-            className="py-3 px-1 mb-3"
-          >
+          <li onClick={() => {}} className="py-3 px-1 mb-3">
             <button className="flex items-center justify-center">
               <TbSettings className="mx-2 text-xl" /> Setting
             </button>

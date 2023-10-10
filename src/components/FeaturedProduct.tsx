@@ -133,14 +133,14 @@ export default function FeaturedProduct() {
   const prodLoading = useSelector(
     (state: RootState) => state.Admin.productLoading
   );
+  
+  // const FeaturedProducts = prodData?.filter((prod: ProductData) => {
+  //   if (prod?.productFeatured) {
+  //     return prod;
+  //   }
+  // });
 
-  const FeaturedProducts = prodData?.filter((prod: ProductData) => {
-    if (prod?.productFeatured) {
-      return prod;
-    }
-  });
-
-  const filteredProducts = FeaturedProducts?.slice(0, 9);
+  const filteredProducts = prodData?.slice(0, 9);
 
   return (
     <div className="w-full text-black  flex items-center flex-col justify-start">
@@ -169,8 +169,8 @@ export default function FeaturedProduct() {
           </ul>
         </div>
       </div>
-      <div className="py-2 grid grid-cols-4 gap-4">
-        {
+      <div className="py-2 grid grid-cols-4 gap-4 w-full">
+        {/* {
             data_Product.map((item: ProductData) => {
                 return (
                   <ProductCard
@@ -185,8 +185,8 @@ export default function FeaturedProduct() {
                   />
                 );
               })
-        }
-        {/* {prodLoading ? (
+        } */}
+        {prodLoading ? (
           <Loading />
         ) : (
           <>
@@ -211,7 +211,7 @@ export default function FeaturedProduct() {
               })
             )}
           </>
-        )} */}
+        )}
       </div>
     </div>
   );

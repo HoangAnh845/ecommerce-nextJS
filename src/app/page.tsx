@@ -73,7 +73,9 @@ export default function Home() {
     <>
       <header className="container bg-white m-auto px-4">
         <Navbar />
-        <Hero setRatio={setRatio} />
+        <Hero 
+        // setRatio={setRatio} 
+        />
       </header>
       <>
         <main className="container m-auto px-4">
