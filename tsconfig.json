@@ -3,6 +3,7 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -25,6 +26,6 @@
       
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/middleware/AuthCheck.js"],
+  "include": ["next-env.d.ts", "**/*.tts", "**/*.tsx", ".next/types/**/*.ts", "src/middleware/AuthCheck.js", "src/components/Map.ts"],
   "exclude": ["node_modules"]
 }

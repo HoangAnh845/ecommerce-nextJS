@@ -35,8 +35,9 @@ export default function Login() {
       return;
     }
 
-
     const res = await login_me(formData);
+    console.log("--- formData ---", formData);
+
     if (res.success) {
       setLoding(false);
       Cookies.set("token", res?.finalData?.token);

@@ -144,7 +144,7 @@ export default function FeaturedProduct() {
 
   return (
     <div className="w-full text-black  flex items-center flex-col justify-start">
-      <div className="flex items-center justify-between w-full px-2 py-2 mb-2">
+      <div className="flex items-center justify-between w-full py-2 mb-2">
         <h1 className="font-semibold text-2xl ">New Arrivals Products!</h1>
         <div>
           <ul className="flex gap-4">

@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         // Tạo token JWT
         const token = jwt.sign(
             { id: checkUser._id, email: checkUser.email, role: checkUser?.role },
-            process.env.JWT_SECREAT ?? 'default_secret_dumbScret', 
+            process.env.JWT_SECREAT ?? 'default_secret_dumbScret',
             { expiresIn: '1d' }
         );
 

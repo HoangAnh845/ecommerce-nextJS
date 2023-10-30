@@ -18,7 +18,7 @@ const bgBanner = {
 
 export default function Hero() { // { setRatio }: IProps
   return (
-    <div className="relative w-full h-[400px] sm:h-[345px]">
+    <div className="relative container m-auto w-full h-[400px] sm:h-[345px]">
       <div style={bgBanner} className="p-5 pb-0">
         <div className="grid grid-cols-2 gap-4 h-full overflow-hidden">
           <div className="leading-[5] max-[640px]:leading-[3] ps-5">

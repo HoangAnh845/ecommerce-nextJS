@@ -3,10 +3,12 @@
 import { get_product_by_category_id } from "@/Services/Admin/product";
 import Loading from "@/app/loading";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import { toast, ToastContainer } from "react-toastify";
 import useSWR from "swr";
 
@@ -20,6 +22,7 @@ type ProductData = {
   productSlug: string;
   productPrice: Number;
   productFeatured: Boolean;
+  loction: string;
   productCategory: {
     categoryName: string;
     categoryDescription: string;
@@ -51,7 +54,7 @@ export default function Page({
   });
 
   return (
-    <div className="bg-gray-100">
+    <div className="">
       {/* <div className="text-sm breadcrumbs  border-b-2 border-b-orange-600">
         <ul>
           <li>
@@ -90,36 +93,42 @@ export default function Page({
           </li>
         </ul>
       </div> */}
-       <header className="container bg-white m-auto px-4">
+      <header className="bg-white">
         <Navbar />
+        <Hero />
       </header>
-      <div className="container flex justify-between p-5">
+      <div className="container m-auto flex justify-between py-5">
         {isLoading ? (
           <Loading />
         ) : (
           <>
-            {thisProduct?.map((item: ProductData) => {
-              return (
-                <ProductCard
-                  productName={item?.productName}
-                  productPrice={item?.productPrice}
-                  productFeatured={item?.productFeatured}
-                  productImage={item?.productImage}
-                  productSlug={item?.productSlug}
-                  productCategory={item?.productCategory}
-                  _id={item?._id}
-                  key={item?._id}
-                />
-              );
-            })}
+            <div className="grid grid-cols-4 gap-2">
+              {thisProduct?.map((item: ProductData) => {
+                return (
+                  <ProductCard
+                    productName={item?.productName}
+                    productPrice={item?.productPrice}
+                    productFeatured={item?.productFeatured}
+                    loction="category"
+                    productImage={item?.productImage}
+                    productSlug={item?.productSlug}
+                    productCategory={item?.productCategory}
+                    _id={item?._id}
+                    key={item?._id}
+                  />
+                );
+              })}
+            </div>
           </>
         )}
-        {(isLoading === false && thisProduct === undefined) ||
-          (thisProduct?.length < 1 && (
-            <p className="text-2xl my-4 text-center font-semibold text-red-400">
+        {isLoading === false && thisProduct === undefined && (
+          <div className="flex justify-center items-center text-gray-500 text-center w-full font-semibold h-[60vh] leading-9">
+            <span>
+              <AiOutlineFileSearch className="text-2xl m-auto" />
               No Product Found in this Category
-            </p>
-          ))}
+            </span>
+          </div>
+        )}
       </div>
       <footer className="bg-neutral">
         <Footer />

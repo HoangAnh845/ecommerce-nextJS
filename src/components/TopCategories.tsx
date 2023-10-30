@@ -102,7 +102,7 @@ export default function TopCategories() {
   return (
     <div id="my-Categories" className="w-full">
       <div className="px-2 pt-6 mb-2">
-        <h1 className="py-2 px-4 text-black font-semibold text-2xl ">
+        <h1 className="py-2 text-black font-semibold text-2xl ">
         New Top Category
         </h1>
       </div>

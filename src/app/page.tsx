@@ -24,6 +24,8 @@ import DiscountProduct from "@/components/DiscountProduct";
 import BannerProduct from "@/components/BannerProduct";
 import BlogProduct from "@/components/BlogProduct";
 import BrandLogo from "@/components/BrandLogo";
+import Image from "next/image";
+import { TbMailOpened } from "react-icons/tb";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -71,14 +73,14 @@ export default function Home() {
 
   return (
     <>
-      <header className="container bg-white m-auto px-4">
+      <header className="bg-white">
         <Navbar />
-        <Hero 
-        // setRatio={setRatio} 
+        <Hero
+        // setRatio={setRatio}
         />
       </header>
       <>
-        <main className="container m-auto px-4">
+        <main className="container m-auto">
           <TopCategories />
           <DiscountProduct />
           <FeaturedProduct />
@@ -87,6 +89,22 @@ export default function Home() {
           <BrandLogo />
         </main>
       </>
+      <div className="w-full h-28 relative">
+        <Image src={"/bg2.jpg"} alt="bg2" quality={80} fill={true} className="z-1" />
+        <div className="container m-auto grid grid-cols-2 gap-2 relative text-white h-[inherit]">
+          <div className="flex items-center">
+            <TbMailOpened className="text-5xl"/>
+            <div className="ms-2">
+              <h3 className="text-xl font-bold">Join our newsletter & 10% Off</h3>
+              <span className="text-sm text-gray-300">Sign up for our newsletter to get up-to-date from us</span>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <input type="email" placeholder="Enter Your Mail" className=" bg-white rounded-l-lg p-3 w-8/12 outline-none" />
+            <button type="button" className="p-3 bg-orange-500 rounded-r-lg">SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
       <footer className="bg-neutral">
         <Footer />
       </footer>

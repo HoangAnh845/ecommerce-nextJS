@@ -11,23 +11,21 @@ const schema = Joi.object({
 });
 
 
-export async function POST (req : Request)  {
+export async function POST(req: Request) {
     await connectDB();
 
-    const { email, password} = await req.json();
+    const { email, password } = await req.json();
     const { error } = schema.validate({ email, password });
 
     if (error) return NextResponse.json({ success: false, message: error.details[0].message.replace(/['"]+/g, '') });
-    if(email === 'mrmoiz.dev@gmail.com') return  NextResponse.json({ success: true, message: "Password Updated Successfully"  });
 
     try {
         const ifExist = await User.findOne({ email });
-        if(ifExist?.role === 'admin') return   NextResponse.json({ success: true, message: "Password Updated Successfully"  });
-        if(!ifExist) return NextResponse.json({ success: false, message: "Email Not Found" });
+        if (!ifExist) return NextResponse.json({ success: false, message: "Email Not Found" });
         const hashedPassword = await hash(password, 12)
-        const updatePassword =  await User.findOneAndUpdate({email  , password : hashedPassword });
-        return NextResponse.json({ success: true, message: "Password Updated Successfully"  });
-        
+        const updatePassword = await User.findOneAndUpdate({ email, password: hashedPassword });
+        if (updatePassword) return NextResponse.json({ success: true, message: "Password Updated Successfully" });
+
     } catch (error) {
         console.log('Error in forget Password (server) => ', error);
         return NextResponse.json({ success: false, message: "Something Went Wrong Please Retry Later !" })
